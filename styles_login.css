@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: url('fondo.jpg') no-repeat center center fixed !important;
+    background-size: cover !important;
+    background-color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+:root {
+    --cfe-verde: #009929;
+    --cfe-verde-claro: #5ccb5f;
+    --blanco: #ffffff;
+}
+
+.caja-central {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    padding: 50px;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid var(--cfe-verde);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    color: var(--blanco);
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+}
+
+h1 { font-size: 3em; margin-bottom: 10px; font-weight: 800; }
+h2 { margin-bottom: 20px; color: var(--cfe-verde-claro); font-weight: 600; }
+h3 { font-weight: 300; margin-bottom: 30px; letter-spacing: 2px; }
+
+.btn-cfe {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    text-decoration: none;
+    background-color: var(--cfe-verde);
+    color: var(--blanco);
+    font-weight: bold;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: transform 0.2s, background-color 0.2s;
+    text-align: center;
+}
+
+.btn-cfe:hover {
+    background-color: var(--cfe-verde-claro);
+    transform: scale(1.02);
+}
+
+.input-group { margin-bottom: 20px; text-align: left; }
+.input-group label { display: block; margin-bottom: 8px; font-size: 0.9em; color: #ddd; }
+.input-group input {
+    width: 100%; padding: 12px; border-radius: 5px; border: none; outline: none;
+    background: rgba(255, 255, 255, 0.95); font-size: 1em;
+}
+
+.logo-esquina { position: absolute; top: 20px; left: 20px; color: white; text-align: left; z-index: 10; }
+.logo-grande { font-weight: bold; font-size: 1.8em; line-height: 1; }
+.logo-peque { font-size: 0.7em; margin-top: 5px; }
+
+.btn-cerrar { display: block; text-align: right; margin-top: -30px; margin-bottom: 10px; margin-right: -20px; }
+.btn-cerrar a { color: #bbb; text-decoration: none; font-size: 2em; font-weight: bold; }
+.btn-cerrar a:hover { color: var(--cfe-verde-claro); }

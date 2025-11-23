@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Solicitud de Servicio CFE</title>
+    <link rel="stylesheet" href="styles_solicitud.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Solicitud de Servicio CFE</h1>
+            <p class="subtitle">Complete el formulario para solicitar su servicio eléctrico</p>
+        </header>
+
+        <form id="solicitudForm">
+            <!-- SERVICIO NUEVO -->
+            <section class="form-section">
+                <h2>Solicitud de servicio nuevo</h2>
+
+                <div class="form-group">
+                    <label for="nombreCompleto" class="required">Nombre completo:</label>
+                    <input type="text" id="nombreCompleto" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="curp" class="required">CURP:</label>
+                    <input type="text" id="curp" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono" class="required">Teléfono:</label>
+                    <input type="number" id="telefono" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="required">Correo electrónico:</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <h3>Dirección del servicio</h3>
+
+                <div class="form-group">
+                    <label for="calle" class="required">Calle:</label>
+                    <input type="text" id="calle" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="numeroExterior" class="required">Número exterior:</label>
+                    <input type="number" id="numeroExterior" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="colonia" class="required">Colonia:</label>
+                    <input type="text" id="colonia" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="municipio" class="required">Municipio / Alcaldía:</label>
+                    <input type="text" id="municipio" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="estado" class="required">Estado:</label>
+                    <input type="text" id="estado" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="codigoPostal" class="required">Código postal:</label>
+                    <input type="number" id="codigoPostal" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="referencias">Referencias del domicilio:</label>
+                    <input type="text" id="referencias">
+                </div>
+
+                <div class="form-group">
+                    <label for="usoServicio" class="required">Uso del servicio:</label>
+                    <select id="usoServicio" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="hogar">Hogar</option>
+                        <option value="negocio">Negocio</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="required">¿Requiere instalación del medidor?</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="requiereMedidor" value="si" required> Sí
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="requiereMedidor" value="no"> No
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="required">¿Requiere poste o acometida?</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="requierePoste" value="si" required> Sí
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="requierePoste" value="no"> No
+                        </label>
+                    </div>
+                </div>
+
+                <h3>Programar cita</h3>
+
+                <div class="form-group">
+                    <label for="fechaCita" class="required">Fecha:</label>
+                    <input type="date" id="fechaCita" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="horaCita" class="required">Hora:</label>
+                    <input type="time" id="horaCita" required>
+                </div>
+            </section>
+
+            <!-- CAMBIO DE TITULAR -->
+            <section class="form-section">
+                <h2>Cambio de titular
+                </h2>
+
+                <div class="form-group">
+                    <label for="nombreTitular" class="required">Nombre completo:</label>
+                    <input type="text" id="nombreTitular" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="curpTitular" class="required">CURP:</label>
+                    <input type="text" id="curpTitular" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="rfc">RFC:</label>
+                    <input type="text" id="rfc">
+                </div>
+
+                <div class="form-group">
+                    <label for="telefonoTitular" class="required">Teléfono:</label>
+                    <input type="number" id="telefonoTitular" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="emailTitular" class="required">Correo electrónico:</label>
+                    <input type="email" id="emailTitular" required>
+                </div>
+
+                <h3>Datos del servicio existente</h3>
+
+                <div class="form-group">
+                    <label for="numeroServicio" class="required">Número del servicio:</label>
+                    <input type="number" id="numeroServicio" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="numeroMedidor" class="required">Número de medidor:</label>
+                    <input type="number" id="numeroMedidor" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="direccionRegistrada" class="required">Dirección registrada:</label>
+                    <input type="text" id="direccionRegistrada" required>
+                </div>
+
+                <h3>Documentación obligatoria</h3>
+
+                <div class="form-group">
+                    <label for="identificacion" class="required">Identificación oficial:</label>
+                    <input type="file" id="identificacion" accept=".pdf,.jpg,.jpeg,.png" required>
+                    <div class="file-info">Formatos aceptados: PDF, JPG, PNG (Máx. 5MB)</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="documentoRenta" class="required">Documento que acredite renta / venta:</label>
+                    <input type="file" id="documentoRenta" accept=".pdf,.jpg,.jpeg,.png" required>
+                    <div class="file-info">Formatos aceptados: PDF, JPG, PNG (Máx. 5MB)</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="fotoMedidor" class="required">Foto del medidor actual:</label>
+                    <input type="file" id="fotoMedidor" accept=".jpg,.jpeg,.png" required>
+                    <div class="file-info">Formatos aceptados: JPG, PNG (Máx. 5MB)</div>
+                </div>
+
+                <div class="form-group">
+                    <label class="required">¿Tiene adeudos?</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="adeudos" value="si" required> Sí
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="adeudos" value="no"> No
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="fechaOcupacion" class="required">Fecha desde la que ocupa el domicilio:</label>
+                    <input type="date" id="fechaOcupacion" required>
+                </div>
+            </section>
+
+            <button type="submit" class="btn-submit">Enviar Solicitud</button>
+        </form>
+    </div>
+
+    <script src="script_solicitud.js"></script>
+</body>
+</html>

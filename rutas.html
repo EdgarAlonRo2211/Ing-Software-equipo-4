@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruta clientes</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="styles_rutas.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bienvenido, <span id="nombreUsuario">Juan</span></h1>
+            <p class="subtitle">Sistema de gestión de rutas para lecturas de medidores</p>
+        </header>
+
+        <main class="main-content">
+            <div class="controls-panel">
+                <button id="btnRuta" class="btn-primary">
+                    Calcular ruta del día
+                </button>
+                
+                <div class="status-indicator">
+                    <div class="status-dot" id="statusDot"></div>
+                    <span id="statusText">Ubicación no disponible</span>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <div id="mapa"></div>
+                <div class="map-overlay">
+                    <div class="clientes-count">
+                        <span class="count-number" id="clientesCount">0</span>
+                        <span class="count-label">Clientes programados</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="panelCliente" class="client-panel">
+                <div class="panel-header">
+                    <h2>Información del cliente</h2>
+                    <button class="btn-close" id="btnCerrarPanel">×</button>
+                </div>
+                
+                <div class="client-info">
+                    <div class="info-item">
+                        <span class="info-label">Nombre:</span>
+                        <span id="clienteNombre" class="info-value">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Dirección:</span>
+                        <span id="clienteDireccion" class="info-value">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Coordenadas:</span>
+                        <span id="clienteCoords" class="info-value">-</span>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="campo">
+                        <label class="campo-label">¿Se pudo tomar lectura?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="captura" value="si">
+                                <span class="radio-custom"></span>
+                                Sí
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="captura" value="no">
+                                <span class="radio-custom"></span>
+                                No
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="capturaCampo" class="campo hidden">
+                        <label class="campo-label">Lectura del medidor:</label>
+                        <div class="input-with-icon">
+                            <input type="number" id="lecturaInput" placeholder="Ingresa la lectura">
+                        </div>
+                        <div class="input-hint">Ingresa solo números</div>
+                    </div>
+
+                    <div id="explicacionCampo" class="campo hidden">
+                        <label class="campo-label">Explica por qué no se pudo tomar:</label>
+                        <textarea id="explicacionText" rows="3" placeholder="Describe la razón..."></textarea>
+                        <div class="input-hint">Mínimo 10 caracteres</div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button id="btnGuardar" class="btn-success" disabled>
+                            Guardar información
+                        </button>
+                        <button id="btnSiguiente" class="btn-secondary">
+                            Siguiente cliente
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Sistema de Ruta CFE &copy; 2024</p>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script_rutas.js"></script>
+</body>
+</html>

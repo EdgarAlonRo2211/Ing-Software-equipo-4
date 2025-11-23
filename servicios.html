@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios con Contador</title>
+    <link rel="stylesheet" href="styles_servicio.css">
+</head>
+<body>
+    <div class="servicios-container">
+        <button class="boton-servicios" onclick="toggleServicios()">
+            Ver Servicios
+        </button>
+        
+        <div class="lista-servicios" id="listaServicios">
+        </div>
+    </div>
+
+    <div class="modal" id="modalResultados">
+        <div class="modal-contenido">
+            <span class="cerrar-modal" onclick="cerrarModal()">&times;</span>
+            <h3>Resultados del Servicio</h3>
+            
+            <div class="contador-container">
+                <div class="fondo_contador"></div>
+                <div class="contador" id="contador">0</div>
+                <div class="unidad"><h3>kWh</h3></div>
+            </div>
+
+            <div class="concepto-grafico">
+                <h4>Concepto</h4>
+                <div class="tabla-concepto">
+                    <div class="fila header">
+                        <div class="columna">Energía (kWh)</div>
+                        <div class="columna">Estimada</div>
+                        <div class="columna">Médica</div>
+                        <div class="columna">Estimada</div>
+                    </div>
+                    <div class="fila">
+                        <div class="columna"></div>
+                        <div class="columna">10411</div>
+                        <div class="columna">08289</div>
+                        <div class="columna">2122</div>
+                    </div>
+                    <div class="fila">
+                        <div class="columna">Básico</div>
+                        <div class="columna"></div>
+                        <div class="columna"></div>
+                        <div class="columna">300</div>
+                    </div>
+                    <div class="fila">
+                        <div class="columna">Intermedio1</div>
+                        <div class="columna"></div>
+                        <div class="columna"></div>
+                        <div class="columna">300</div>
+                    </div>
+                    <div class="fila">
+                        <div class="columna">Intermedio2</div>
+                        <div class="columna"></div>
+                        <div class="columna"></div>
+                        <div class="columna">300</div>
+                    </div>
+                    <div class="fila">
+                        <div class="columna">Excedente</div>
+                        <div class="columna"></div>
+                        <div class="columna"></div>
+                        <div class="columna" id="excedente">1,222</div>
+                    </div>
+                    <div class="fila">
+                        <div class="columna">Suma</div>
+                        <div class="columna"></div>
+                        <div class="columna"></div>
+                        <div class="columna" id="suma">2,122</div>
+                    </div>
+                </div>
+
+                <div class="leyenda">
+                    Este gráfico refleja tu nivel de consumo
+                </div>
+            </div>
+
+            <div class="barra-consumo">
+                <div class="barra-progreso">
+                    <div class="progreso" id="barraProgreso"></div>
+                </div>
+                <div class="etiquetas-barra">
+                    <span>Bajo consumo</span>
+                    <span>Alto consumo</span>
+                </div>
+            </div>
+
+            <div class="total-periodo">
+                <h4>Total período</h4>
+                <div class="tabla-precios">
+                    <div class="fila header">
+                        <div class="columna">Precio (MXN)</div>
+                        <div class="columna">Subtotal (MXN)</div>
+                    </div>
+                    <div class="fila">
+                        <div class="columna">0.749</div>
+                        <div class="columna">224.70</div>
+                    </div>
+                    <div class="fila">
+                        <div class="columna">0.874</div>
+                        <div class="columna">262.20</div>
+                    </div>
+                    <div class="fila">
+                        <div class="columna">1.122</div>
+                        <div class="columna">336.60</div>
+                    </div>
+                    <div class="fila">
+                        <div class="columna">2.990</div>
+                        <div class="columna" id="subtotalExcedente">3,653.78</div>
+                    </div>
+                    <div class="fila total">
+                        <div class="columna"></div>
+                        <div class="columna" id="totalFinal">4,477.28</div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="boton-descarga" onclick="descargarReporte()">
+                 Descargar Reporte
+            </button>
+        </div>
+    </div>
+
+    <script src="script_servicios.js"></script>
+</body>
+</html>
